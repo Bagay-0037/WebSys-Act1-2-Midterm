@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Blog Post</title>
+    <style>
+    .important {
+        font-weight: bold;
+        color: green;
+    }
+    .comment {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    #main-title {
+        font-size: 2em;
+    }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">The Wonders of JavaScript</h1>
+    <p class="post-paragraph">JavaScript is an amazing language that allows for dynamic web development.</p>
+    <p class="post-paragraph important">One of its key features is the ability to manipulate the DOM.</p>
+    <div id="comments-section">
+        <h2>Comments</h2>
+        <div class="comment" data-comment-id="1">
+            <p class="comment-author">Alice</p>
+            <p class="comment-text">Great post!</p>
+        </div>
+        <div class="comment">
+            <p class="comment-author">Bob</p>
+            <p class="comment-text important">I learned a lot.</p>
+        </div>
+        <ul id="tags">
+            <li class="tag">javascript</li>
+            <li class="tag important">dom</li>
+            <li class="tag">web development</li>
+        </ul>
+    </div>
+    <button id="highlight-important" onclick="changeColor">Highlight Important Text</button>
+
+    <script>
+
+        // Your JavaScript code will go here
+        document.getElementById("main-title").innerText = "Exploring the Power of DOM Manipulation";
+    
+
+        
+        let paragraph = document.getElementsByClassName("post-paragraph");
+        console.log("Number of Paragraphs: "+ paragraph.length);
+
+
+        let author = document.getElementsByClassName('comment-author');
+
+        let author1 = author[0].innerHTML;
+        console.log("Comment Author: "+ author1);
+
+        let author2 = author[1].innerHTML;
+        console.log("Comment Author: "+ author2);
+
+
+
+
+        let items = document.querySelectorAll("li");
+
+        for(let i = 0; i < items.length; i++){
+            items[i].innerText += " Featured";
+        }
+
+        function changeColor(){
+            let changeClr = document.getElementsByClassName("important");
+
+            for(let i = 0; i < changeClr.length; i++){
+                changeClr[i].style.color = "blue";
+            }
+        }
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
